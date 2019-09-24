@@ -96,7 +96,7 @@ class BE_DPS_Alpha_View {
 
 		global $dps_alpha_heading;
 		$letter = substr( get_the_title( $post->ID ), 0, 1 );
-		if( $letter !== $dps_alpha_heading ) {
+		if( strtoupper($letter) !== strtoupper($dps_alpha_heading) ) {
 			$dps_alpha_heading = $letter;
 			return $this->heading_open() . $letter . $this->heading_close();
 		}
