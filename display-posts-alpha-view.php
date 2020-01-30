@@ -40,7 +40,8 @@ class BE_DPS_Alpha_View {
 
 		$args['orderby'] = 'title';
 		$args['order'] = 'ASC';
-		$args['posts_per_page'] = -1;
+		if( empty( $atts['posts_per_page'] ) )
+			$args['posts_per_page'] = -1;
 		$args = apply_filters( 'display_posts_alpha_view_query_args', $args, $atts );
 
 		return $args;
